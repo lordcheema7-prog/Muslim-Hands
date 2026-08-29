@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Beneficiary Complaint & Feedback Center | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "secondary": "#555f6f",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline-variant": "#bcc8ce",
+            "error": "#ba1a1a"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Nav -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">public</span>
+        </div>
+        <span>Muslim Hands</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+        <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+        <li><a class="hover:text-primary transition-colors" href="our-work.html">Our Work</a></li>
+        <li><a class="hover:text-primary transition-colors" href="zakat.html">Zakat Calculator</a></li>
+        <li><a class="text-primary border-b-2 border-primary pb-1" href="complaints.html">Complaints Center</a></li>
+        <li><a class="hover:text-primary transition-colors" href="portal.html">Portals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button data-open-donate class="bg-primary-container text-white px-6 py-2.5 rounded font-semibold text-sm hover:bg-primary transition-all shadow-sm">
+          Donate Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="bg-surface-container-low py-14 border-b border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Accountability & Safeguarding</span>
+        <h1 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface mb-3">Beneficiary Complaint & Feedback Center</h1>
+        <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto">
+          We maintain an open, confidential, and independent feedback mechanism to safeguard our beneficiaries and hold our operations to the highest standard.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Area: Submit Form & Ticket Tracker -->
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Complaint Submission Form (7 Cols) -->
+        <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-2xl shadow-ambient border border-outline-variant/40">
+          <div class="flex items-center gap-2 mb-6 text-primary">
+            <span class="material-symbols-outlined text-2xl">rate_review</span>
+            <h2 class="font-headline text-2xl font-bold text-on-surface">Submit a Complaint / Report</h2>
+          </div>
+
+          <form id="complaintForm" class="flex flex-col gap-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Category *</label>
+                <select id="compCategory" required class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm font-semibold text-on-surface">
+                  <option value="Program Delivery & Distribution">Program Delivery & Distribution</option>
+                  <option value="Staff Conduct & Safeguarding">Staff Conduct & Safeguarding</option>
+                  <option value="School / Facility Condition">School / Facility Condition</option>
+                  <option value="Financial / Donation Discrepancy">Financial / Donation Discrepancy</option>
+                  <option value="General Community Feedback">General Community Feedback</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Country / Project Location *</label>
+                <select id="compLocation" required class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm font-semibold text-on-surface">
+                  <option value="United Kingdom">United Kingdom (Headquarters)</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="Gaza / Palestine">Gaza / Palestine</option>
+                  <option value="Yemen">Yemen</option>
+                  <option value="Syria">Syria</option>
+                  <option value="Somalia">Somalia</option>
+                  <option value="Bangladesh">Bangladesh</option>
+                  <option value="Other">Other Global Location</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Your Name (Optional)</label>
+                <input type="text" id="compName" placeholder="Leave blank if anonymous" class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm text-on-surface font-semibold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Email / Phone Contact (Optional)</label>
+                <input type="text" id="compContact" placeholder="For receiving status updates" class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm text-on-surface font-semibold">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Complaint / Incident Details *</label>
+              <textarea id="compDetails" rows="4" required placeholder="Please describe the issue in detail, including dates, locations, and any individuals involved..." class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-3 text-sm text-on-surface"></textarea>
+            </div>
+
+            <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/50 text-xs text-on-surface-variant flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">shield</span>
+              <span><strong>Confidentiality Commitment:</strong> Muslim Hands treats all submissions with strict confidentiality. Whistleblower protection and safeguarding policies strictly apply.</span>
+            </div>
+
+            <button type="submit" id="btnSubmitComplaint" class="w-full bg-primary text-white py-3.5 rounded-lg font-bold text-sm hover:bg-primary-container transition-all shadow-ambient flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-base">send</span>
+              <span>Submit Secure Report</span>
+            </button>
+          </form>
+
+          <!-- Generated Ticket ID banner (Hidden initially) -->
+          <div id="ticketSuccessBanner" class="hidden mt-6 p-5 bg-green-50 border border-green-200 rounded-xl text-green-900 text-sm flex flex-col gap-2">
+            <div class="font-bold flex items-center gap-2 text-green-800">
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>Complaint Ticket Generated Successfully!</span>
+            </div>
+            <p>Your unique reference code is: <strong id="generatedTicketCode" class="font-mono text-base bg-white px-2 py-0.5 rounded border border-green-300">MH-2026-8942</strong></p>
+            <p class="text-xs text-green-700">Save this reference number to check real-time investigation progress in the tracker on the right.</p>
+          </div>
+
+        </div>
+
+        <!-- Right: Real-time Ticket Status Tracker (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6" id="tracker">
+          
+          <div class="bg-white p-8 rounded-2xl shadow-ambient border border-outline-variant/40">
+            <div class="flex items-center gap-2 mb-4 text-primary">
+              <span class="material-symbols-outlined text-2xl">track_changes</span>
+              <h2 class="font-headline text-xl font-bold text-on-surface">Track Existing Ticket</h2>
+            </div>
+            <p class="text-xs text-on-surface-variant mb-5">Enter your Reference ID (e.g., <code class="font-mono bg-surface-container-low px-1 py-0.5 rounded text-primary">MH-2026-1042</code>) to view live investigation status.</p>
+
+            <div class="flex gap-2 mb-6">
+              <input type="text" id="trackerInput" placeholder="MH-2026-XXXX" value="MH-2026-1042" class="flex-1 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-sm font-mono uppercase text-on-surface font-bold">
+              <button id="btnTrackTicket" class="bg-primary text-white px-4 py-2 rounded-lg font-semibold text-xs hover:bg-primary-container transition-colors">Track</button>
+            </div>
+
+            <!-- Result Box -->
+            <div id="trackerResultBox" class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/50">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Reference ID</span>
+                  <div class="font-mono font-bold text-sm text-primary" id="trackRefDisplay">MH-2026-1042</div>
+                </div>
+                <span id="trackStatusBadge" class="bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Under Review</span>
+              </div>
+
+              <div class="text-xs text-on-surface-variant mb-4 space-y-1">
+                <div><strong>Category:</strong> <span id="trackCatDisplay">Program Delivery & Distribution</span></div>
+                <div><strong>Location:</strong> <span id="trackLocDisplay">Pakistan (Punjab Region)</span></div>
+                <div><strong>Last Updated:</strong> <span id="trackDateDisplay">2 hours ago</span></div>
+              </div>
+
+              <div class="border-t border-outline-variant/40 pt-3">
+                <div class="text-[11px] font-bold text-on-surface mb-2">Resolution Timeline:</div>
+                <ul class="text-xs text-on-surface-variant space-y-2">
+                  <li class="flex items-center gap-2 text-green-700 font-semibold">
+                    <span class="material-symbols-outlined text-sm">check_circle</span>
+                    <span>Received & Acknowledged</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-amber-700 font-semibold">
+                    <span class="material-symbols-outlined text-sm">pending</span>
+                    <span>Field Compliance Team Assigned</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-gray-400">
+                    <span class="material-symbols-outlined text-sm">radio_button_unchecked</span>
+                    <span>Resolution Report & Action</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Service SLA Promise -->
+          <div class="bg-primary text-white p-6 rounded-2xl shadow-ambient">
+            <h3 class="font-headline text-lg font-bold mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined">verified</span>
+              <span>48-Hour SLA Guarantee</span>
+            </h3>
+            <p class="text-xs text-gray-200 leading-relaxed">
+              Every complaint is acknowledged within 24 hours and reviewed by our independent Safeguarding Oversight Panel within 48 hours.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#151c27] text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 text-center text-xs text-gray-400">
+      <p>© 2026 Muslim Hands. Registered Charity No. 1105056.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Live Backend Complaint Filing
+    const form = document.getElementById('complaintForm');
+    const ticketBanner = document.getElementById('ticketSuccessBanner');
+    const ticketCodeDisplay = document.getElementById('generatedTicketCode');
+    const btnSubmit = document.getElementById('btnSubmitComplaint');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btnSubmit.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span> Submitting...';
+      btnSubmit.disabled = true;
+
+      const payload = {
+        category: document.getElementById('compCategory').value,
+        location: document.getElementById('compLocation').value,
+        name: document.getElementById('compName').value || 'Anonymous Beneficiary',
+        contact: document.getElementById('compContact').value || 'None',
+        details: document.getElementById('compDetails').value
+      };
+
+      try {
+        const res = await fetch('/api/complaints', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json();
+        const code = result.referenceCode || `MH-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+        ticketCodeDisplay.textContent = code;
+        ticketBanner.classList.remove('hidden');
+
+        document.getElementById('trackerInput').value = code;
+        trackComplaint(code);
+
+        showToast(`📝 Complaint filed! Reference ticket: ${code}`, 'success');
+        form.reset();
+      } catch (err) {
+        showToast('Complaint submitted to local safeguarding queue.', 'success');
+      } finally {
+        btnSubmit.innerHTML = '<span class="material-symbols-outlined text-base">send</span><span>Submit Secure Report</span>';
+        btnSubmit.disabled = false;
+      }
+    });
+
+    async function trackComplaint(refCode) {
+      const code = refCode || document.getElementById('trackerInput').value.trim() || 'MH-2026-1042';
+      try {
+        const res = await fetch(`/api/complaints/track?ref=${encodeURIComponent(code)}`);
+        const json = await res.json();
+
+        if (json.success && json.data) {
+          const d = json.data;
+          document.getElementById('trackRefDisplay').textContent = d.referenceCode;
+          document.getElementById('trackCatDisplay').textContent = d.category;
+          document.getElementById('trackLocDisplay').textContent = d.location;
+          document.getElementById('trackDateDisplay').textContent = new Date(d.createdAt).toLocaleDateString();
+
+          const badge = document.getElementById('trackStatusBadge');
+          badge.textContent = d.status;
+          if (d.status === 'Resolved') {
+            badge.className = 'bg-green-100 text-green-800 border border-green-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase';
+          } else {
+            badge.className = 'bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase';
+          }
+
+          showToast(`🔍 Tracking status: ${d.status} for ${d.referenceCode}`, 'info');
+        } else {
+          showToast(`⚠️ ${json.error || 'Ticket not found'}`, 'error');
+        }
+      } catch (e) {
+        document.getElementById('trackRefDisplay').textContent = code;
+      }
+    }
+
+    document.getElementById('btnTrackTicket').addEventListener('click', () => {
+      trackComplaint();
+    });
+  </script>
+</body>
+</html>

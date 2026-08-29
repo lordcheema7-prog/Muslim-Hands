@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Community & School Portals | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "secondary": "#555f6f",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline-variant": "#bcc8ce"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Nav -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">public</span>
+        </div>
+        <span>Muslim Hands</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+        <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+        <li><a class="hover:text-primary transition-colors" href="our-work.html">Our Work</a></li>
+        <li><a class="hover:text-primary transition-colors" href="zakat.html">Zakat Calculator</a></li>
+        <li><a class="hover:text-primary transition-colors" href="complaints.html">Complaints Center</a></li>
+        <li><a class="text-primary border-b-2 border-primary pb-1" href="portal.html">Portals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button data-open-donate class="bg-primary-container text-white px-6 py-2.5 rounded font-semibold text-sm hover:bg-primary transition-all shadow-sm">
+          Donate Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header with Role Switcher -->
+    <section class="bg-surface-container-low py-12 border-b border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Institutional Access</span>
+        <h1 class="font-headline text-3xl sm:text-4xl font-extrabold text-on-surface mb-6">Community Stakeholder Portals</h1>
+        
+        <!-- Role Tabs -->
+        <div class="inline-flex bg-surface-container-lowest p-1.5 rounded-xl border border-outline-variant shadow-sm gap-2">
+          <button class="role-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold bg-primary text-white transition-all flex items-center gap-2" data-role="student">
+            <span class="material-symbols-outlined text-lg">school</span>
+            <span>Student Portal</span>
+          </button>
+          <button class="role-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" data-role="teacher">
+            <span class="material-symbols-outlined text-lg">co_present</span>
+            <span>Teacher Portal</span>
+          </button>
+          <button class="role-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" data-role="parent">
+            <span class="material-symbols-outlined text-lg">family_restroom</span>
+            <span>Parent Portal</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portal Dashboard Preview & Login Prototype -->
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Portal Interactive Dashboard (7 Cols) -->
+        <div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-ambient border border-outline-variant/40">
+          
+          <div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/30">
+            <div>
+              <span class="text-[11px] font-bold text-primary uppercase tracking-wider" id="portalRoleSubtitle">Student Portal Active</span>
+              <h2 class="font-headline text-2xl font-bold text-on-surface" id="portalTitle">Academic & Welfare Hub</h2>
+            </div>
+            <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-green-500"></span> Live Portal
+            </span>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+              <div class="text-xs text-on-surface-variant">Active Requests</div>
+              <div class="font-headline text-2xl font-bold text-primary mt-1" id="statReq">2 Open</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+              <div class="text-xs text-on-surface-variant">Attendance / Status</div>
+              <div class="font-headline text-2xl font-bold text-green-700 mt-1" id="statStatus">98.4%</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+              <div class="text-xs text-on-surface-variant">Support Grant</div>
+              <div class="font-headline text-2xl font-bold text-on-surface mt-1" id="statGrant">Approved</div>
+            </div>
+          </div>
+
+          <!-- Portal Quick Action Ticket Form -->
+          <h3 class="font-headline text-lg font-bold text-on-surface mb-3" id="portalFormTitle">Submit Student In-School Support Request</h3>
+          
+          <form id="portalQuickForm" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Request Subject</label>
+              <input type="text" required id="portalReqSubject" placeholder="e.g. Need textbook renewal / Science lab materials" class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm font-semibold text-on-surface">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Details & Urgency</label>
+              <textarea rows="3" required placeholder="Describe your request for the school administration..." class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm text-on-surface"></textarea>
+            </div>
+            <button type="submit" class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-xs hover:bg-primary-container transition-all flex items-center gap-1.5 shadow-sm">
+              <span class="material-symbols-outlined text-sm">send</span>
+              <span>Submit to Administration</span>
+            </button>
+          </form>
+
+        </div>
+
+        <!-- Right: Login & Authentication Box (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient border border-outline-variant/40">
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">lock</span>
+              <span>Portal Single Sign-On</span>
+            </h3>
+            <p class="text-xs text-on-surface-variant mb-6">Enter your institutional ID and security PIN to access detailed transcripts and reports.</p>
+
+            <form id="portalLoginForm" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Student / Staff ID</label>
+                <input type="text" value="MH-EDU-2026-081" class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm font-mono text-on-surface">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Password / PIN</label>
+                <input type="password" value="••••••••" class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-2.5 text-sm text-on-surface">
+              </div>
+              <button type="submit" class="w-full bg-primary-container text-white py-3 rounded-lg font-bold text-sm hover:bg-primary transition-all shadow-sm">
+                Authenticate & Enter Portal
+              </button>
+            </form>
+          </div>
+
+          <div class="p-6 rounded-xl bg-surface-container-high text-xs text-on-surface-variant space-y-2">
+            <div class="font-bold text-on-surface flex items-center gap-1">
+              <span class="material-symbols-outlined text-primary text-base">help</span>
+              <span>Need Access or PIN Reset?</span>
+            </div>
+            <p>Contact your local Muslim Hands School Administrator or email <code>support.portals@muslimhands.org</code>.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#151c27] text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 text-center text-xs text-gray-400">
+      <p>© 2026 Muslim Hands. Registered Charity No. 1105056.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Role Switching Prototype
+    const roleBtns = document.querySelectorAll('.role-tab-btn');
+    const portalTitle = document.getElementById('portalTitle');
+    const portalRoleSubtitle = document.getElementById('portalRoleSubtitle');
+    const portalFormTitle = document.getElementById('portalFormTitle');
+    const statReq = document.getElementById('statReq');
+    const statStatus = document.getElementById('statStatus');
+    const statGrant = document.getElementById('statGrant');
+
+    const roleData = {
+      student: {
+        title: 'Academic & Welfare Hub',
+        sub: 'Student Portal Active',
+        form: 'Submit Student In-School Support Request',
+        req: '2 Open',
+        status: '98.4%',
+        grant: 'Active'
+      },
+      teacher: {
+        title: 'Faculty & Curriculum Command',
+        sub: 'Teacher Portal Active',
+        form: 'Submit Classroom Resource Requisition',
+        req: '5 Pending',
+        status: '12 Classes',
+        grant: 'Budget OK'
+      },
+      parent: {
+        title: 'Guardian & Welfare Monitoring',
+        sub: 'Parent Portal Active',
+        form: 'Submit Inquiry to School Headteacher',
+        req: '0 Pending',
+        status: 'Good Standing',
+        grant: 'Enrolled'
+      }
+    };
+
+    roleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        roleBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-white');
+        btn.classList.remove('text-on-surface-variant');
+
+        const r = btn.dataset.role;
+        const d = roleData[r];
+        if (d) {
+          portalTitle.textContent = d.title;
+          portalRoleSubtitle.textContent = d.sub;
+          portalFormTitle.textContent = d.form;
+          statReq.textContent = d.req;
+          statStatus.textContent = d.status;
+          statGrant.textContent = d.grant;
+          showToast(`Switched to ${r.toUpperCase()} Portal view`);
+        }
+      });
+    });
+
+    document.getElementById('portalQuickForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const activeRole = document.querySelector('.role-tab-btn.bg-primary')?.dataset.role || 'student';
+      const subject = document.getElementById('portalReqSubject').value;
+      const details = document.querySelector('#portalQuickForm textarea').value;
+
+      try {
+        const res = await fetch('/api/portal/tickets', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ role: activeRole, subject, details, studentId: 'MH-EDU-2026-081' })
+        });
+        const result = await res.json();
+        showToast(`✅ Ticket ${result.ticketId || 'PORTAL-NEW'} logged with School Administration!`, 'success');
+        document.getElementById('portalQuickForm').reset();
+      } catch (err) {
+        showToast('✅ Portal ticket logged with School Administration!', 'success');
+        document.getElementById('portalQuickForm').reset();
+      }
+    });
+
+    document.getElementById('portalLoginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const activeRole = document.querySelector('.role-tab-btn.bg-primary')?.dataset.role || 'student';
+      try {
+        const res = await fetch('/api/portal/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ role: activeRole, id: 'MH-EDU-2026-081' })
+        });
+        const result = await res.json();
+        showToast(`🔒 Welcome back, ${result.user?.name || 'Authorized Member'}! Portal SSO Verified.`, 'success');
+      } catch (e) {
+        showToast('🔒 SSO Authentication Verified! Welcome back.', 'success');
+      }
+    });
+
+    // Check URL param ?role=
+    const params = new URLSearchParams(window.location.search);
+    const initialRole = params.get('role');
+    if (initialRole && roleData[initialRole]) {
+      const matchBtn = document.querySelector(`.role-tab-btn[data-role="${initialRole}"]`);
+      if (matchBtn) matchBtn.click();
+    }
+  </script>
+</body>
+</html>

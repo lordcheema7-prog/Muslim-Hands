@@ -1,0 +1,14 @@
+{
+  "name": "muslim-hands-humanitarian-platform",
+  "version": "2.0.0",
+  "description": "Modern humanitarian platform with continuous 3D loop animation and interactive community portals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "vercel-build": "echo Static site and API ready for Vercel"
+  },
+  "keywords": ["humanitarian", "charity", "zakat", "continuous-loop"],
+  "author": "Antigravity",
+  "license": "MIT"
+}

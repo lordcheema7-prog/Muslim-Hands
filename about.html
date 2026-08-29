@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>About Us | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "secondary": "#555f6f",
+            "secondary-container": "#d6e0f3",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "surface-container-high": "#e2e8f8",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline": "#6d797e",
+            "outline-variant": "#bcc8ce"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Main Navigation Bar -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">public</span>
+        </div>
+        <span>Muslim Hands</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+        <li><a class="text-primary border-b-2 border-primary pb-1" href="about.html">About Us</a></li>
+        <li><a class="hover:text-primary transition-colors" href="our-work.html">Our Work</a></li>
+        <li><a class="hover:text-primary transition-colors" href="zakat.html">Zakat Calculator</a></li>
+        <li><a class="hover:text-primary transition-colors" href="complaints.html">Complaints Center</a></li>
+        <li><a class="hover:text-primary transition-colors" href="portal.html">Portals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button data-open-donate class="bg-primary-container text-white px-6 py-2.5 rounded font-semibold text-sm hover:bg-primary transition-all shadow-sm">
+          Donate Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header Banner -->
+    <section class="bg-surface-container-low py-16 border-b border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Our Foundation</span>
+        <h1 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface mb-4">Dedicated to Humanity Since 1993</h1>
+        <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">
+          Over three decades of delivering aid, restoring dignity, and empowering the most vulnerable communities across 40+ countries.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Pillars -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 md:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/40">
+            <div class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-2xl">verified_user</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-3">100% Zakat Policy</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Every penny of your Zakat donation goes directly to verified eligible recipients without deducting administrative overheads.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/40">
+            <div class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-2xl">analytics</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Audited & Transparent</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Independently audited financial accounts annually submitted to the UK Charity Commission and regulatory bodies worldwide.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/40">
+            <div class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-2xl">handshake</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Community Led</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              We employ local ground teams and engineers to build sustainable community infrastructure, ensuring long-term self-sufficiency.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Impact Numbers -->
+    <section class="py-16 bg-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 md:px-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="font-headline text-4xl md:text-5xl font-extrabold text-primary-container mb-2">3.5M+</div>
+            <div class="text-sm font-medium text-gray-200">Beneficiaries Reached</div>
+          </div>
+          <div>
+            <div class="font-headline text-4xl md:text-5xl font-extrabold text-primary-container mb-2">25,000+</div>
+            <div class="text-sm font-medium text-gray-200">Water Wells Installed</div>
+          </div>
+          <div>
+            <div class="font-headline text-4xl md:text-5xl font-extrabold text-primary-container mb-2">60,000+</div>
+            <div class="text-sm font-medium text-gray-200">Orphans Sponsored</div>
+          </div>
+          <div>
+            <div class="font-headline text-4xl md:text-5xl font-extrabold text-primary-container mb-2">40+</div>
+            <div class="text-sm font-medium text-gray-200">Countries with Field Offices</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#151c27] text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 text-center text-xs text-gray-400">
+      <p>© 2026 Muslim Hands. Registered Charity No. 1105056.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

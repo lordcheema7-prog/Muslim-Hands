@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Admin & Operations Console | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline-variant": "#bcc8ce"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Nav -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">admin_panel_settings</span>
+        </div>
+        <span>Muslim Hands Operations</span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant hover:text-primary flex items-center gap-1">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          <span>Return to Site</span>
+        </a>
+        <button id="btnRefreshData" class="bg-primary-container text-white px-4 py-2 rounded font-semibold text-xs hover:bg-primary transition-all flex items-center gap-1 shadow-sm">
+          <span class="material-symbols-outlined text-base">refresh</span>
+          <span>Refresh Live Data</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-16">
+      
+      <!-- Top Metrics Banner -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+        <div class="bg-white p-6 rounded-2xl shadow-ambient border border-outline-variant/40">
+          <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Total Raised (YTD)</div>
+          <div class="font-headline text-2xl font-extrabold text-primary" id="adminTotalRaised">£12,845,920</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-ambient border border-outline-variant/40">
+          <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Active Complaints</div>
+          <div class="font-headline text-2xl font-extrabold text-amber-600" id="adminActiveComplaints">1 Under Review</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-ambient border border-outline-variant/40">
+          <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">100% Zakat Fund</div>
+          <div class="font-headline text-2xl font-extrabold text-green-700" id="adminZakatDistributed">£8,945,200</div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-ambient border border-outline-variant/40">
+          <div class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Portal Tickets</div>
+          <div class="font-headline text-2xl font-extrabold text-on-surface" id="adminPortalTickets">2 Active</div>
+        </div>
+      </div>
+
+      <!-- Live Tabs Navigation -->
+      <div class="flex gap-3 mb-8 border-b border-outline-variant/40 pb-4">
+        <button class="admin-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold bg-primary text-white" data-tab="donations">
+          Live Donations Feed
+        </button>
+        <button class="admin-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface-variant hover:text-on-surface" data-tab="complaints">
+          Complaint & Safeguarding Desk
+        </button>
+        <button class="admin-tab-btn px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface-variant hover:text-on-surface" data-tab="portals">
+          School & Stakeholder Requests
+        </button>
+      </div>
+
+      <!-- Tab 1: Live Donations Feed -->
+      <div class="admin-tab-panel" id="tab-donations">
+        <div class="bg-white rounded-2xl shadow-ambient border border-outline-variant/40 overflow-hidden">
+          <div class="p-6 border-b border-outline-variant/40 flex justify-between items-center">
+            <h3 class="font-headline text-xl font-bold text-on-surface">Recent Processed Donations</h3>
+            <span class="text-xs text-on-surface-variant">Live streaming from <code>POST /api/donations</code></span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-surface-container-low text-xs uppercase font-bold text-on-surface-variant border-b border-outline-variant/30">
+                <tr>
+                  <th class="p-4">Receipt ID</th>
+                  <th class="p-4">Donor</th>
+                  <th class="p-4">Amount</th>
+                  <th class="p-4">Appeal</th>
+                  <th class="p-4">Frequency</th>
+                  <th class="p-4">Gift Aid</th>
+                  <th class="p-4">Time</th>
+                </tr>
+              </thead>
+              <tbody id="adminDonationsBody" class="divide-y divide-outline-variant/20 font-medium text-xs">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Complaint Desk -->
+      <div class="admin-tab-panel hidden" id="tab-complaints">
+        <div class="bg-white rounded-2xl shadow-ambient border border-outline-variant/40 overflow-hidden">
+          <div class="p-6 border-b border-outline-variant/40 flex justify-between items-center">
+            <h3 class="font-headline text-xl font-bold text-on-surface">Safeguarding & Complaint Audit Ledger</h3>
+            <span class="text-xs text-on-surface-variant">Manage SLAs and resolution statuses</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-surface-container-low text-xs uppercase font-bold text-on-surface-variant border-b border-outline-variant/30">
+                <tr>
+                  <th class="p-4">Reference Code</th>
+                  <th class="p-4">Category</th>
+                  <th class="p-4">Location</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4">Details</th>
+                  <th class="p-4">Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminComplaintsBody" class="divide-y divide-outline-variant/20 font-medium text-xs">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Portal Tickets -->
+      <div class="admin-tab-panel hidden" id="tab-portals">
+        <div class="bg-white rounded-2xl shadow-ambient border border-outline-variant/40 overflow-hidden">
+          <div class="p-6 border-b border-outline-variant/40 flex justify-between items-center">
+            <h3 class="font-headline text-xl font-bold text-on-surface">School Portal In-Queue Requests</h3>
+            <span class="text-xs text-on-surface-variant">Student, teacher & parent tickets</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-surface-container-low text-xs uppercase font-bold text-on-surface-variant border-b border-outline-variant/30">
+                <tr>
+                  <th class="p-4">Ticket ID</th>
+                  <th class="p-4">Role</th>
+                  <th class="p-4">User ID</th>
+                  <th class="p-4">Subject</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4">Date</th>
+                </tr>
+              </thead>
+              <tbody id="adminPortalsBody" class="divide-y divide-outline-variant/20 font-medium text-xs">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Tab Navigation
+    const tabBtns = document.querySelectorAll('.admin-tab-btn');
+    const tabPanels = document.querySelectorAll('.admin-tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-white');
+        btn.classList.remove('text-on-surface-variant');
+
+        const tab = btn.dataset.tab;
+        tabPanels.forEach(p => p.classList.add('hidden'));
+        document.getElementById(`tab-${tab}`).classList.remove('hidden');
+      });
+    });
+
+    async function loadAdminData() {
+      try {
+        // Fetch stats
+        const statsRes = await fetch('/api/stats').then(r => r.json());
+        if (statsRes.success && statsRes.data) {
+          document.getElementById('adminTotalRaised').textContent = `£${statsRes.data.totalRaisedYTD?.toLocaleString() || '12,845,920'}`;
+          document.getElementById('adminZakatDistributed').textContent = `£${statsRes.data.zakatDistributed?.toLocaleString() || '8,945,200'}`;
+        }
+
+        // Fetch donations
+        const donRes = await fetch('/api/donations').then(r => r.json());
+        const donBody = document.getElementById('adminDonationsBody');
+        if (donRes.success && donRes.data) {
+          donBody.innerHTML = donRes.data.map(d => `
+            <tr class="hover:bg-surface-container-low">
+              <td class="p-4 font-mono font-bold text-primary">${d.receiptId}</td>
+              <td class="p-4 font-bold text-on-surface">${d.donorName}</td>
+              <td class="p-4 font-bold text-green-700">£${Number(d.amount).toFixed(2)}</td>
+              <td class="p-4">${d.appeal}</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-gray-100">${d.frequency}</span></td>
+              <td class="p-4">${d.giftAid ? '✅ +25%' : '—'}</td>
+              <td class="p-4 text-gray-400">${new Date(d.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
+            </tr>
+          `).join('');
+        }
+
+        // Fetch complaints
+        const compRes = await fetch('/api/complaints').then(r => r.json());
+        const compBody = document.getElementById('adminComplaintsBody');
+        if (compRes.success && compRes.data) {
+          document.getElementById('adminActiveComplaints').textContent = `${compRes.data.filter(c => c.status !== 'Resolved').length} Under Review`;
+          compBody.innerHTML = compRes.data.map(c => `
+            <tr class="hover:bg-surface-container-low">
+              <td class="p-4 font-mono font-bold text-primary">${c.referenceCode}</td>
+              <td class="p-4">${c.category}</td>
+              <td class="p-4">${c.location}</td>
+              <td class="p-4">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${c.status === 'Resolved' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}">${c.status}</span>
+              </td>
+              <td class="p-4 max-w-xs truncate" title="${c.details}">${c.details}</td>
+              <td class="p-4">
+                ${c.status !== 'Resolved' ? `
+                  <button onclick="resolveTicket('${c.referenceCode}')" class="px-2.5 py-1 bg-green-600 hover:bg-green-700 text-white rounded text-[10px] font-bold">
+                    Mark Resolved
+                  </button>
+                ` : '<span class="text-green-600 font-bold">Closed</span>'}
+              </td>
+            </tr>
+          `).join('');
+        }
+
+        // Fetch portal tickets
+        const portRes = await fetch('/data/db.json').then(r => r.json());
+        const portBody = document.getElementById('adminPortalsBody');
+        if (portRes.portalTickets) {
+          document.getElementById('adminPortalTickets').textContent = `${portRes.portalTickets.length} Active`;
+          portBody.innerHTML = portRes.portalTickets.map(t => `
+            <tr class="hover:bg-surface-container-low">
+              <td class="p-4 font-mono font-bold text-primary">${t.ticketId}</td>
+              <td class="p-4 uppercase font-bold text-[10px] text-gray-600">${t.role}</td>
+              <td class="p-4 font-mono">${t.studentId}</td>
+              <td class="p-4">${t.subject}</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-blue-50 text-blue-800 text-[10px] font-bold">${t.status}</span></td>
+              <td class="p-4 text-gray-400">${new Date(t.createdAt).toLocaleDateString()}</td>
+            </tr>
+          `).join('');
+        }
+      } catch (err) {
+        console.error('Error fetching admin data:', err);
+      }
+    }
+
+    async function resolveTicket(ref) {
+      const notes = prompt('Enter resolution notes for this ticket:');
+      if (notes === null) return;
+      await fetch('/api/complaints/update', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ referenceCode: ref, status: 'Resolved', notes: notes || 'Resolved by field director.' })
+      });
+      loadAdminData();
+    }
+
+    document.getElementById('btnRefreshData').addEventListener('click', loadAdminData);
+    loadAdminData();
+  </script>
+</body>
+</html>

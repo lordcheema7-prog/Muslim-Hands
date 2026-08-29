@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Our Work & Appeals | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "secondary": "#555f6f",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline-variant": "#bcc8ce",
+            "error": "#ba1a1a"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Nav -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">public</span>
+        </div>
+        <span>Muslim Hands</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+        <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+        <li><a class="text-primary border-b-2 border-primary pb-1" href="our-work.html">Our Work</a></li>
+        <li><a class="hover:text-primary transition-colors" href="zakat.html">Zakat Calculator</a></li>
+        <li><a class="hover:text-primary transition-colors" href="complaints.html">Complaints Center</a></li>
+        <li><a class="hover:text-primary transition-colors" href="portal.html">Portals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button data-open-donate class="bg-primary-container text-white px-6 py-2.5 rounded font-semibold text-sm hover:bg-primary transition-all shadow-sm">
+          Donate Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="bg-surface-container-low py-14 border-b border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-4 md:px-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Global Programmes</span>
+        <h1 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface mb-3">Our Work & Active Appeals</h1>
+        <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl">
+          Explore our humanitarian campaigns addressing acute emergencies and long-term sustainable development.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 pt-8" id="categoryFilterBar">
+          <button class="filter-tab-btn px-4 py-2 rounded-full text-xs font-bold bg-primary text-white transition-all" data-cat="all">All Appeals (6)</button>
+          <button class="filter-tab-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:border-primary transition-all" data-cat="emergency">Emergency Relief</button>
+          <button class="filter-tab-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:border-primary transition-all" data-cat="water">Water & Sanitation</button>
+          <button class="filter-tab-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:border-primary transition-all" data-cat="orphans">Orphan Care</button>
+          <button class="filter-tab-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:border-primary transition-all" data-cat="education">Schools & Education</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appeals Grid -->
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 md:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="appealsGrid">
+          
+          <!-- Appeal 1 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="emergency">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80" alt="Gaza Emergency"/>
+              <div class="absolute top-3 left-3 bg-error text-white text-[11px] font-bold px-2.5 py-0.5 rounded">URGENT</div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Gaza Medical & Food Aid</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">Providing surgical supplies, ready-to-eat meals, and clean water delivery.</p>
+              <button data-open-donate data-appeal="Gaza Emergency Relief" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Donate Gaza Aid</button>
+            </div>
+          </div>
+
+          <!-- Appeal 2 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="water">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80" alt="Water Wells"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Dig-A-Well Community Project</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">Install a community water well serving 200+ families for generations.</p>
+              <button data-open-donate data-appeal="Dig-A-Well Community Project" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Build a Well (£660)</button>
+            </div>
+          </div>
+
+          <!-- Appeal 3 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="orphans">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Orphan Care"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Orphan Sponsorship</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">Complete holistic support: shelter, schooling, healthcare, and nutrition.</p>
+              <button data-open-donate data-appeal="Orphan Sponsorship" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Sponsor for £30/mo</button>
+            </div>
+          </div>
+
+          <!-- Appeal 4 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="education">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="School of Excellence"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Schools of Excellence</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">State-of-the-art educational facilities for underprivileged children.</p>
+              <button data-open-donate data-appeal="Schools of Excellence" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Support a School</button>
+            </div>
+          </div>
+
+          <!-- Appeal 5 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="emergency">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Winter Relief"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Winter Warmth Emergency</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">Providing thermal blankets, winter clothing, and heating fuel kits.</p>
+              <button data-open-donate data-appeal="Winter Warmth Emergency" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Donate Winter Kit (£50)</button>
+            </div>
+          </div>
+
+          <!-- Appeal 6 -->
+          <div class="appeal-card bg-white rounded-xl overflow-hidden shadow-ambient border border-outline-variant/40 flex flex-col" data-cat="water">
+            <div class="relative h-52 bg-surface-container-low overflow-hidden">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="Solar Water Plant"/>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-2">Solar Powered Water Center</h3>
+              <p class="text-xs text-on-surface-variant mb-6 flex-grow">High-capacity desalination and solar filtration for entire villages.</p>
+              <button data-open-donate data-appeal="Solar Powered Water Center" class="w-full bg-primary text-white py-2.5 rounded font-semibold text-xs hover:bg-primary-container transition-colors">Contribute to Plant</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#151c27] text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 text-center text-xs text-gray-400">
+      <p>© 2026 Muslim Hands. Registered Charity No. 1105056.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Live Filter Tabs
+    const filterBtns = document.querySelectorAll('.filter-tab-btn');
+    const cards = document.querySelectorAll('.appeal-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white');
+          b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-white');
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+
+        const cat = btn.dataset.cat;
+        cards.forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

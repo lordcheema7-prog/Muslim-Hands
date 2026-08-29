@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Zakat Calculator (100% Policy) | Muslim Hands</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00677d",
+            "primary-container": "#29b6d8",
+            "secondary": "#555f6f",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "surface-container": "#e7eefe",
+            "on-surface": "#151c27",
+            "on-surface-variant": "#3d494d",
+            "outline-variant": "#bcc8ce"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+    .shadow-ambient { box-shadow: 0 4px 20px rgba(31, 41, 55, 0.06); }
+  </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+  <!-- Nav -->
+  <nav class="bg-surface-container-lowest text-primary sticky top-0 border-b border-outline-variant/40 shadow-sm z-50">
+    <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-7xl mx-auto">
+      <a class="flex items-center gap-3 font-headline text-2xl font-bold text-primary tracking-tight" href="index.html">
+        <div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-ambient">
+          <span class="material-symbols-outlined text-2xl">public</span>
+        </div>
+        <span>Muslim Hands</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+        <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+        <li><a class="hover:text-primary transition-colors" href="our-work.html">Our Work</a></li>
+        <li><a class="text-primary border-b-2 border-primary pb-1" href="zakat.html">Zakat Calculator</a></li>
+        <li><a class="hover:text-primary transition-colors" href="complaints.html">Complaints Center</a></li>
+        <li><a class="hover:text-primary transition-colors" href="portal.html">Portals</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button data-open-donate data-appeal="100% Zakat Fund" class="bg-primary-container text-white px-6 py-2.5 rounded font-semibold text-sm hover:bg-primary transition-all shadow-sm">
+          Pay Zakat
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="bg-surface-container-low py-14 border-b border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 text-center">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">100% Zakat Policy</span>
+        <h1 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface mb-3">Interactive Zakat Calculator</h1>
+        <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto">
+          Calculate your annual Zakat with exact Shariah accuracy. Every single pound is distributed 100% directly to eligible recipients.
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Calculator Inputs (7 Cols) -->
+        <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-2xl shadow-ambient border border-outline-variant/40">
+          
+          <h2 class="font-headline text-2xl font-bold text-on-surface mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">account_balance</span>
+            <span>Your Zakatable Assets</span>
+          </h2>
+
+          <div class="space-y-5" id="zakatForm">
+            
+            <!-- Cash -->
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Cash in Hand & Bank Accounts (£)</label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                <input type="number" id="zCash" value="5000" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+              </div>
+            </div>
+
+            <!-- Gold & Silver -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Gold Value (£)</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                  <input type="number" id="zGold" value="1500" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Silver Value (£)</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                  <input type="number" id="zSilver" value="200" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+                </div>
+              </div>
+            </div>
+
+            <!-- Investments & Stocks -->
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Shares, Crypto & Liquid Investments (£)</label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                <input type="number" id="zInvest" value="800" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+              </div>
+            </div>
+
+            <!-- Business Inventory -->
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Business Stock & Trade Merchandise (£)</label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                <input type="number" id="zBusiness" value="0" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+              </div>
+            </div>
+
+            <div class="border-t border-outline-variant/40 pt-5">
+              <h3 class="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-error">remove_circle_outline</span>
+                <span>Deductible Liabilities & Debts</span>
+              </h3>
+              
+              <div>
+                <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Immediate Debts & Bills Due This Month (£)</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-2.5 font-bold text-on-surface-variant">£</span>
+                  <input type="number" id="zDebts" value="500" class="z-input w-full bg-surface-container-low border border-outline-variant rounded-lg pl-8 pr-3 py-2.5 text-sm font-semibold text-on-surface">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Real-time Summary Card (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient border border-primary/20 sticky top-28">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Live Calculation</span>
+            <h2 class="font-headline text-2xl font-bold text-on-surface mb-6">Zakat Summary</h2>
+
+            <div class="space-y-3 mb-6 text-sm">
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Total Assets:</span>
+                <span class="font-bold text-on-surface" id="dispTotalAssets">£7,500.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Less Liabilities:</span>
+                <span class="font-bold text-error" id="dispTotalDebts">-£500.00</span>
+              </div>
+              <div class="flex justify-between border-t border-outline-variant/40 pt-2 font-bold text-on-surface">
+                <span>Net Zakatable Wealth:</span>
+                <span class="text-primary" id="dispNetWealth">£7,000.00</span>
+              </div>
+              <div class="flex justify-between text-xs text-on-surface-variant bg-surface-container-low p-2.5 rounded">
+                <span>Nisab Threshold (Silver):</span>
+                <span class="font-bold">£380.00</span>
+              </div>
+            </div>
+
+            <!-- Total Zakat Box -->
+            <div class="bg-primary-container/15 border border-primary-container/40 p-5 rounded-xl mb-6 text-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-primary">Your Zakat Due (2.5%)</span>
+              <div class="font-headline text-4xl font-extrabold text-primary my-1" id="dispZakatDue">£175.00</div>
+              <span class="text-[11px] text-on-surface-variant">Qualifies for 100% Direct Delivery</span>
+            </div>
+
+            <button id="btnPayZakatNow" class="w-full bg-primary text-white py-3.5 rounded-lg font-bold text-sm hover:bg-primary-container transition-all shadow-ambient flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined">volunteer_activism</span>
+              <span>Pay Zakat of £175.00</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#151c27] text-white py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 text-center text-xs text-gray-400">
+      <p>© 2026 Muslim Hands. Registered Charity No. 1105056.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Live Zakat Math
+    const inputs = document.querySelectorAll('.z-input');
+    const dispTotalAssets = document.getElementById('dispTotalAssets');
+    const dispTotalDebts = document.getElementById('dispTotalDebts');
+    const dispNetWealth = document.getElementById('dispNetWealth');
+    const dispZakatDue = document.getElementById('dispZakatDue');
+    const btnPayZakatNow = document.getElementById('btnPayZakatNow');
+
+    let currentZakat = 175;
+
+    function recalculateZakat() {
+      const cash = parseFloat(document.getElementById('zCash').value) || 0;
+      const gold = parseFloat(document.getElementById('zGold').value) || 0;
+      const silver = parseFloat(document.getElementById('zSilver').value) || 0;
+      const invest = parseFloat(document.getElementById('zInvest').value) || 0;
+      const business = parseFloat(document.getElementById('zBusiness').value) || 0;
+      const debts = parseFloat(document.getElementById('zDebts').value) || 0;
+
+      const totalAssets = cash + gold + silver + invest + business;
+      const netWealth = Math.max(0, totalAssets - debts);
+      const nisab = 380; // Silver Nisab benchmark
+
+      let zakat = 0;
+      if (netWealth >= nisab) {
+        zakat = netWealth * 0.025;
+      }
+      currentZakat = zakat;
+
+      dispTotalAssets.textContent = `£${totalAssets.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      dispTotalDebts.textContent = `-£${debts.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      dispNetWealth.textContent = `£${netWealth.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      dispZakatDue.textContent = `£${zakat.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      btnPayZakatNow.innerHTML = `<span class="material-symbols-outlined">volunteer_activism</span><span>Pay Zakat of £${zakat.toFixed(2)}</span>`;
+    }
+
+    inputs.forEach(inp => inp.addEventListener('input', recalculateZakat));
+    recalculateZakat();
+
+    btnPayZakatNow.addEventListener('click', () => {
+      const modal = document.getElementById('donationModal');
+      if (modal) {
+        const customInput = document.getElementById('customDonateInput');
+        if (customInput) customInput.value = currentZakat.toFixed(2);
+        const appealSelect = document.getElementById('modalAppealSelect');
+        if (appealSelect) appealSelect.value = '100% Zakat Fund';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    });
+  </script>
+</body>
+</html>

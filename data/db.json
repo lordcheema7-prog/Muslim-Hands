@@ -1,0 +1,227 @@
+{
+  "stats": {
+    "beneficiaries": 3584210,
+    "wellsInstalled": 25420,
+    "orphansSponsored": 62150,
+    "countries": 42,
+    "totalRaisedYTD": 12846020,
+    "zakatDistributed": 8945200
+  },
+  "appeals": [
+    {
+      "id": "gaza-relief",
+      "title": "Gaza Medical & Food Aid",
+      "category": "emergency",
+      "location": "Gaza / Palestine",
+      "goal": 500000,
+      "raised": 412600,
+      "urgent": true,
+      "image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80",
+      "description": "Providing surgical supplies, mobile trauma care, hot meals, and clean water delivery to displaced families."
+    },
+    {
+      "id": "dig-a-well",
+      "title": "Dig-A-Well Community Project",
+      "category": "water",
+      "location": "Pakistan, Yemen & Somalia",
+      "goal": 150000,
+      "raised": 118400,
+      "urgent": false,
+      "image": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+      "description": "Install deep bore community water wells serving 200+ families with clean drinking water for generations."
+    },
+    {
+      "id": "orphan-sponsorship",
+      "title": "Orphan Sponsorship Program",
+      "category": "orphans",
+      "location": "Global",
+      "goal": 200000,
+      "raised": 190000,
+      "urgent": false,
+      "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+      "description": "Comprehensive one-to-one sponsorship providing schooling, healthcare, nutritious food, and safe living conditions."
+    },
+    {
+      "id": "schools-excellence",
+      "title": "Schools of Excellence",
+      "category": "education",
+      "location": "Pakistan & Mali",
+      "goal": 100000,
+      "raised": 74500,
+      "urgent": false,
+      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+      "description": "Building modern educational facilities, science labs, and teacher training centers for underprivileged youth."
+    },
+    {
+      "id": "winter-warmth",
+      "title": "Winter Warmth Emergency",
+      "category": "emergency",
+      "location": "Syria, Lebanon & Jordan",
+      "goal": 250000,
+      "raised": 205000,
+      "urgent": true,
+      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80",
+      "description": "Delivering thermal blankets, waterproof winter tents, children's winter clothing, and heating fuel."
+    },
+    {
+      "id": "solar-water-center",
+      "title": "Solar Powered Water Center",
+      "category": "water",
+      "location": "Somalia & Niger",
+      "goal": 180000,
+      "raised": 135000,
+      "urgent": false,
+      "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80",
+      "description": "High-capacity solar-powered reverse osmosis water purification and micro-irrigation centers."
+    }
+  ],
+  "donations": [
+    {
+      "receiptId": "MH-REC-5138",
+      "donorName": "Test Donor",
+      "donorEmail": "",
+      "amount": 100,
+      "currency": "GBP",
+      "frequency": "One-off",
+      "appeal": "Gaza Medical & Food Aid",
+      "giftAid": false,
+      "status": "completed",
+      "createdAt": "2026-08-29T05:40:23.755Z"
+    },
+    {
+      "receiptId": "MH-REC-9042",
+      "donorName": "Anonymous Donor",
+      "amount": 50,
+      "currency": "GBP",
+      "frequency": "One-off",
+      "appeal": "Gaza Medical & Food Aid",
+      "giftAid": true,
+      "status": "completed",
+      "createdAt": "2026-08-28T21:40:00.000Z"
+    },
+    {
+      "receiptId": "MH-REC-9041",
+      "donorName": "Tariq Mahmood",
+      "amount": 660,
+      "currency": "GBP",
+      "frequency": "One-off",
+      "appeal": "Dig-A-Well Community Project",
+      "giftAid": true,
+      "status": "completed",
+      "createdAt": "2026-08-28T21:15:00.000Z"
+    },
+    {
+      "receiptId": "MH-REC-9040",
+      "donorName": "Amina Begum",
+      "amount": 30,
+      "currency": "GBP",
+      "frequency": "Monthly",
+      "appeal": "Orphan Sponsorship Program",
+      "giftAid": true,
+      "status": "completed",
+      "createdAt": "2026-08-28T20:55:00.000Z"
+    },
+    {
+      "receiptId": "MH-REC-9039",
+      "donorName": "Brother Youssef",
+      "amount": 250,
+      "currency": "GBP",
+      "frequency": "One-off",
+      "appeal": "100% Zakat Fund",
+      "giftAid": false,
+      "status": "completed",
+      "createdAt": "2026-08-28T20:10:00.000Z"
+    }
+  ],
+  "complaints": [
+    {
+      "referenceCode": "MH-2026-2081",
+      "category": "Program Delivery",
+      "location": "UK",
+      "name": "Anonymous Beneficiary",
+      "contact": "None Provided",
+      "details": "Test complaint audit",
+      "status": "Under Review",
+      "priority": "Normal",
+      "timeline": [
+        {
+          "status": "Received & Logged",
+          "timestamp": "2026-08-29T05:40:23.763Z",
+          "notes": "Case logged into Safeguarding System and assigned to Field Review Officer."
+        }
+      ],
+      "createdAt": "2026-08-29T05:40:23.763Z"
+    },
+    {
+      "referenceCode": "MH-2026-1042",
+      "category": "Program Delivery & Distribution",
+      "location": "Pakistan",
+      "name": "Local Resident Community",
+      "contact": "resident.audit@example.com",
+      "details": "Water tanker delivery schedule was delayed by 2 days in the Multan district due to road repair.",
+      "status": "Under Review",
+      "priority": "Medium",
+      "timeline": [
+        {
+          "status": "Received & Logged",
+          "timestamp": "2026-08-28T18:00:00.000Z",
+          "notes": "Ticket generated and assigned to Regional Field Lead"
+        },
+        {
+          "status": "Under Review",
+          "timestamp": "2026-08-28T19:30:00.000Z",
+          "notes": "Field Officer contacted transport contractor for rescheduled delivery"
+        }
+      ],
+      "createdAt": "2026-08-28T18:00:00.000Z"
+    },
+    {
+      "referenceCode": "MH-2026-1038",
+      "category": "School / Facility Condition",
+      "location": "Somalia",
+      "name": "Parent Association",
+      "contact": "parent.committee@example.com",
+      "details": "Classroom ceiling fan required maintenance in School of Excellence Grade 4 block.",
+      "status": "Resolved",
+      "priority": "Low",
+      "timeline": [
+        {
+          "status": "Received",
+          "timestamp": "2026-08-27T10:00:00.000Z",
+          "notes": "Complaint logged"
+        },
+        {
+          "status": "Resolved",
+          "timestamp": "2026-08-28T14:00:00.000Z",
+          "notes": "Maintenance technician replaced electrical wiring and fan units."
+        }
+      ],
+      "createdAt": "2026-08-27T10:00:00.000Z"
+    }
+  ],
+  "portalTickets": [
+    {
+      "ticketId": "PORTAL-892",
+      "role": "student",
+      "studentId": "MH-EDU-2026-081",
+      "subject": "Need textbook renewal for Advanced Biology",
+      "details": "Requesting 2026 edition textbook from the central library.",
+      "status": "Approved",
+      "createdAt": "2026-08-28T16:00:00.000Z"
+    },
+    {
+      "ticketId": "PORTAL-893",
+      "role": "teacher",
+      "studentId": "STAFF-902",
+      "subject": "Science Laboratory Chemical Replenishment",
+      "details": "Monthly test reagents required for grade 10 chemistry syllabus.",
+      "status": "Pending",
+      "createdAt": "2026-08-28T17:30:00.000Z"
+    }
+  ],
+  "subscribers": [
+    "fatima.donor@example.com",
+    "ahmed.community@example.com",
+    "lordcheema7@gmail.com"
+  ]
+}
